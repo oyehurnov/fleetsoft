@@ -36,7 +36,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDAwMiwibmJmIjoxNzYxNzQ0MDAyLCJleHAiOjE3NjE3NDc2MDIsInVpZCI6MX0.JtBZZ0Phsr3IWjA8KUm5TzXjyNgVVMOVIDf-BuE2dW0",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTg0OTkxOSwibmJmIjoxNzYxODQ5OTE5LCJleHAiOjE3NjE4NTM1MTksInVpZCI6Mn0.i4yvjHkH1zERgqsz3FO6NAGQNBb9ogT5kQiOXGGk6SE",
 							"type": "string"
 						}
 					]
@@ -113,7 +113,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDQ5MiwibmJmIjoxNzYxNzQ0NDkyLCJleHAiOjE3NjE3NDgwOTIsInVpZCI6Mn0.cObEJkELJzbWAzYrHNggNK6NVQkoYXVaInrMiiu9AHQ",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTg0OTkxOSwibmJmIjoxNzYxODQ5OTE5LCJleHAiOjE3NjE4NTM1MTksInVpZCI6Mn0.i4yvjHkH1zERgqsz3FO6NAGQNBb9ogT5kQiOXGGk6SE",
 							"type": "string"
 						}
 					]
@@ -121,7 +121,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/users/1",
+					"raw": "http://localhost:8080/users/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -129,7 +129,7 @@
 					"port": "8080",
 					"path": [
 						"users",
-						"1"
+						"10"
 					]
 				}
 			},
@@ -166,7 +166,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDAwMiwibmJmIjoxNzYxNzQ0MDAyLCJleHAiOjE3NjE3NDc2MDIsInVpZCI6MX0.JtBZZ0Phsr3IWjA8KUm5TzXjyNgVVMOVIDf-BuE2dW0",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTg0OTkxOSwibmJmIjoxNzYxODQ5OTE5LCJleHAiOjE3NjE4NTM1MTksInVpZCI6Mn0.i4yvjHkH1zERgqsz3FO6NAGQNBb9ogT5kQiOXGGk6SE",
 							"type": "string"
 						}
 					]
@@ -175,7 +175,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"title\":\"War and Peace\",\"author\":\"Redrick Shuhard\",\"description\":\"Science Fiction\",\"published_at\":\"1869-01-01\"}",
+					"raw": "{\"title\":\"War and War\",\"author\":\"Redrick Shuhard\",\"description\":\"Science Fiction\",\"published_at\":\"1869-01-01\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -183,7 +183,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/books/12",
+					"raw": "http://localhost:8080/books/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -191,7 +191,7 @@
 					"port": "8080",
 					"path": [
 						"books",
-						"12"
+						"3"
 					]
 				}
 			},
@@ -231,6 +231,44 @@
 					"path": [
 						"books",
 						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTg0OTkxOSwibmJmIjoxNzYxODQ5OTE5LCJleHAiOjE3NjE4NTM1MTksInVpZCI6Mn0.i4yvjHkH1zERgqsz3FO6NAGQNBb9ogT5kQiOXGGk6SE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"demo_manual_1\",\"email\":\"demo-m1@example.com\",\"password\":\"secret1\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
 					]
 				}
 			},
