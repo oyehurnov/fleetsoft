@@ -1,21 +1,46 @@
-# FleetSoft
+# FleetSoft Yii2 REST Books API
 ## Develop a small RESTful application on Yii2 to manage a book library.
 Spec https://docs.google.com/document/d/1VltHPHT_ip0B6NarKXo2uiFJhatzEb4WuWkiM7nIENo/edit?tab=t.0
-
-
-# Yii2 REST Books API
 
 ## Requirements
 - PHP 8+
 - Composer
-- MySQL or SQLite
-- (Optional) Docker / docker-compose
+- MySQL
+- Docker / docker-compose
 
 ## Install
-1. Clone / create Yii2 basic app.
-2. `composer install`
-3. `composer require firebase/php-jwt`
-4. Configure `config/db.php` with your DB credentials.
-5. Set `params['jwtSecret']` in `config/params.php` (use a long random string).
-6. Run migrations:
+1. Run docker compose up -d 
+   2. Permissions & Apache fix (if needed)
+```
+       docker exec -it yii2_app bash
+       chmod -R 755 /app
+       chmod -R 777 /app/yii2-app/runtime /app/yii2-app/web/assets
+
+       cat <<'EOF' > /etc/apache2/sites-available/000-default.conf
+       <VirtualHost *:80>
+       DocumentRoot /app/yii2-app/web
+       <Directory /app/yii2-app/web>
+       AllowOverride All
+       Require all granted
+       Options Indexes FollowSymLinks
+       </Directory>
+       ErrorLog /var/log/apache2/error.log
+       CustomLog /var/log/apache2/access.log combined
+       </VirtualHost>
+       EOF
+    
+       a2enmod rewrite
+       service apache2 restart
+       exit
+       docker-compose restart
+```
+3. Create Yii2 basic app: composer create-project --prefer-dist yiisoft/yii2-app-basic /app/yii2-app
+4. Run
+```
+    `composer install`
+    `composer require firebase/php-jwt`
+```
+5. Run migrations.
+7. Seed user and book tables (`php yii seed`)
+8. Apply to Postman collection (FleetSoft.postman_collection.json)
 

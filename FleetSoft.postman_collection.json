@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "862e3573-4f65-43a3-aea9-56ff35f7771a",
+		"name": "FleetSoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13390960"
+	},
+	"item": [
+		{
+			"name": "GET books",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST create book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDAwMiwibmJmIjoxNzYxNzQ0MDAyLCJleHAiOjE3NjE3NDc2MDIsInVpZCI6MX0.JtBZZ0Phsr3IWjA8KUm5TzXjyNgVVMOVIDf-BuE2dW0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"War and Peace\",\"author\":\"Leo Tolstoy\",\"description\":\"Epic\",\"published_at\":\"1869-01-01\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDAwMiwibmJmIjoxNzYxNzQ0MDAyLCJleHAiOjE3NjE3NDc2MDIsInVpZCI6MX0.JtBZZ0Phsr3IWjA8KUm5TzXjyNgVVMOVIDf-BuE2dW0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"user2\",\"password\":\"password2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET get user by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDQ5MiwibmJmIjoxNzYxNzQ0NDkyLCJleHAiOjE3NjE3NDgwOTIsInVpZCI6Mn0.cObEJkELJzbWAzYrHNggNK6NVQkoYXVaInrMiiu9AHQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET book by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT update book by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDAwMiwibmJmIjoxNzYxNzQ0MDAyLCJleHAiOjE3NjE3NDc2MDIsInVpZCI6MX0.JtBZZ0Phsr3IWjA8KUm5TzXjyNgVVMOVIDf-BuE2dW0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"War and Peace\",\"author\":\"Redrick Shuhard\",\"description\":\"Science Fiction\",\"published_at\":\"1869-01-01\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE delete book by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyLWFwcCIsImlhdCI6MTc2MTc0NDAwMiwibmJmIjoxNzYxNzQ0MDAyLCJleHAiOjE3NjE3NDc2MDIsInVpZCI6MX0.JtBZZ0Phsr3IWjA8KUm5TzXjyNgVVMOVIDf-BuE2dW0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
