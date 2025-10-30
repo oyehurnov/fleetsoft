@@ -10,7 +10,7 @@ Spec https://docs.google.com/document/d/1VltHPHT_ip0B6NarKXo2uiFJhatzEb4WuWkiM7n
 
 ## Install
 1. Run docker compose up -d 
-   2. Permissions & Apache fix (if needed)
+2. Permissions & Apache fix (if needed)
 ```
        docker exec -it yii2_app bash
        chmod -R 755 /app
