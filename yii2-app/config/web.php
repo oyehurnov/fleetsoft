@@ -1,4 +1,6 @@
 <?php
+use yii\web\Response;
+use yii\filters\ContentNegotiator;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -14,7 +16,10 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '7vYvZg41LRVdf2eT-h4z8QZJQUX7TTUM',
+            'cookieValidationKey' => 'bf6spBmAk97Gb_RSVp1yZCeaUg7a7rjS',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -50,6 +55,28 @@ $config = [
             ],
         ],
         */
+        'response' => [
+            'format' => Response::FORMAT_JSON,
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => true,
+            'rules' => [
+                // auth & users
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'users', 'pluralize' => true,
+                    'extraPatterns' => [
+                        'POST register' => 'register', // optional alias
+                    ]
+                ],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'auth', 'pluralize' => false,
+                    'extraPatterns' => [
+                        'POST login' => 'login',
+                    ]
+                ],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'books'],
+            ],
+        ],
     ],
     'params' => $params,
 ];
