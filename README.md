@@ -37,10 +37,22 @@ Spec https://docs.google.com/document/d/1VltHPHT_ip0B6NarKXo2uiFJhatzEb4WuWkiM7n
 3. Create Yii2 basic app: composer create-project --prefer-dist yiisoft/yii2-app-basic /app/yii2-app
 4. Run
 ```
-    `composer install`
-    `composer require firebase/php-jwt`
+       composer install
+       composer require firebase/php-jwt
+       composer require --dev phpunit/phpunit yiisoft/yii2-codeception
 ```
 5. Run migrations.
 7. Seed user and book tables (`php yii seed`)
-8. Apply to Postman collection (FleetSoft.postman_collection.json)
+8. Use the attached Postman collection (FleetSoft.postman_collection.json)
+9. Test the API with Postman requests 
+
+## Install
+1. Start the app (built-in server)
+   ```
+       php -S 127.0.0.1:8080 -t web
+   ```
+3. Run tests
+   ```
+       vendor/bin/phpunit --testdox
+   ```
 
