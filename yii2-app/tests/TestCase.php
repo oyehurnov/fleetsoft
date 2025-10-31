@@ -36,8 +36,13 @@ abstract class TestCase extends BaseTestCase
             CURLOPT_HTTPHEADER => $headers,
         ]);
         $response = curl_exec($ch);
+        if ($response === false) {
+            fwrite(STDERR, "cURL error: " . curl_error($ch) . PHP_EOL);
+        }
         $info = curl_getinfo($ch);
         curl_close($ch);
-        return [$info['http_code'], json_decode($response, true)];
+//        return [$info['http_code'], json_decode($response, true)];
+
+        return [$info['http_code'] ?? 0, json_decode($response, true)];
     }
 }

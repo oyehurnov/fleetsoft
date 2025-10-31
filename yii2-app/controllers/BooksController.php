@@ -32,14 +32,14 @@ class BooksController extends ActiveController
     // override index to add pagination easily (GET /books)
     public function actionIndex()
     {
-        $query = Book::find();
-        $provider = new ActiveDataProvider([
+        $query = \app\models\Book::find();
+
+        return new \yii\data\ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => Yii::$app->request->get('per-page', 10),
+                'pageSize' => 10,
             ],
         ]);
-        return $provider;
     }
 
     // POST /books

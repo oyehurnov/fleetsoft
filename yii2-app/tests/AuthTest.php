@@ -7,11 +7,18 @@ class AuthTest extends TestCase
 
     public function testUserRegistration()
     {
+        $username = 'user_' . uniqid();
+        $email = $username . '@example.com';
+
         [$status, $data] = $this->post('/users', [
-            'username' => 'testuser',
-            'email' => 'testuser@example.com',
+            'username' => $username,
+            'email' => $email,
             'password' => 'secret123'
         ]);
+
+        if ($status !== 201) {
+            fwrite(STDERR, "Registration failed: " . json_encode($data) . "\n");
+        }
 
         $this->assertEquals(201, $status, 'Registration failed');
         $this->assertArrayHasKey('id', $data);
