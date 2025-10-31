@@ -60,6 +60,30 @@ class UsersController extends Controller
         return ['errors' => $user->getErrors()];
     }
 
+    public function actionCreate()
+    {
+        $data = Yii::$app->request->getBodyParams();
+
+        $user = new User();
+        $user->username = $data['username'] ?? null;
+        $user->email = $data['email'] ?? null;
+
+        // Map plain password to hashed value
+        if (!empty($data['password'])) {
+            $user->password_hash = password_hash($data['password'], PASSWORD_DEFAULT);
+        }
+
+        $user->created_at = date('Y-m-d H:i:s');
+
+        if ($user->validate() && $user->save()) {
+            Yii::$app->response->setStatusCode(201);
+            return $user;
+        }
+
+        Yii::$app->response->setStatusCode(400);
+        return ['errors' => $user->getErrors()];
+    }
+
     // GET /users/{id}
     public function actionView($id)
     {
