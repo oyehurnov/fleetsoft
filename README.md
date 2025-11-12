@@ -1,6 +1,5 @@
 # FleetSoft Yii2 REST Books API
 ## Develop a small RESTful application on Yii2 to manage a book library.
-Spec https://docs.google.com/document/d/1VltHPHT_ip0B6NarKXo2uiFJhatzEb4WuWkiM7nIENo/edit?tab=t.0
 
 ## Requirements
 - PHP 8+
@@ -46,7 +45,7 @@ Spec https://docs.google.com/document/d/1VltHPHT_ip0B6NarKXo2uiFJhatzEb4WuWkiM7n
 8. Use the attached Postman collection (FleetSoft.postman_collection.json)
 9. Test the API with Postman requests 
 
-## Install
+## Run tests
 1. Start the app (built-in server)
    ```
        php -S 127.0.0.1:8080 -t web
