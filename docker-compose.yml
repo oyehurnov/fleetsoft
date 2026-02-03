@@ -11,6 +11,10 @@ services:
     environment:
       - APACHE_DOCUMENT_ROOT=/app/yii2-app/web
       - TZ=Europe/Kyiv
+    command: >
+      bash -c "sed -i 's|DocumentRoot /app/web|DocumentRoot /app/yii2-app/web|g' /etc/apache2/sites-enabled/000-default.conf &&
+               sed -i 's|<Directory /app/web/>|<Directory /app/yii2-app/web/>|g' /etc/apache2/sites-enabled/000-default.conf &&
+               apache2-foreground"
     depends_on:
       - db
 
